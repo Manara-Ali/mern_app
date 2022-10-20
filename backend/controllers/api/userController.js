@@ -41,3 +41,28 @@ exports.createUser = async (request, response) => {
     });
   }
 };
+
+// Define a route handler for retrieving the a single user
+exports.getUser = async (request, response) => {
+  try {
+    const user = await User.findById(request.params.id);
+
+    // Assuming no user if found with that id
+    if (!user) {
+      throw new Error("No user found with that id");
+    }
+
+    // Send response
+    response.status(200).json({
+      status: "success",
+      data: {
+        user,
+      },
+    });
+  } catch (error) {
+    response.status(404).json({
+      status: "fail",
+      message: error.message,
+    });
+  }
+};
