@@ -3,6 +3,7 @@ import React from "react";
 
 // ADDITIONAL IMPORTS
 import SignUpForm from "../components/SignUpForm";
+import LoginForm from "../components/LoginForm";
 
 // CREATE COMPONENT
 const AuthPage = ({ setUser }) => {
@@ -10,6 +11,8 @@ const AuthPage = ({ setUser }) => {
     <div>
       <h1>AuthPage</h1>
       <SignUpForm setUser={setUser} />
+      <br />
+      <LoginForm setUser={setUser} />
     </div>
   );
 };

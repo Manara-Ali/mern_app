@@ -15,7 +15,7 @@ import { getUser } from "../utilities/users-service";
 const App = () => {
   // Create a variable to hold the state of our component
   const [user, setUser] = useState(getUser());
-  // console.log(user);
+  console.log(user);
   return (
     <main className="App">
       {user ? (
