@@ -22,7 +22,7 @@ export async function login(userData) {
   // Retrieve token
   const data = response.data;
 
-  console.log(data);
+  // console.log(data);
 
   // Add token to localstorage
   localStorage.setItem("data", JSON.stringify(data));
@@ -30,6 +30,11 @@ export async function login(userData) {
   // Return response
   return response;
 }
+
+// Create a function to logout
+export const logOut = () => {
+  localStorage.removeItem("data");
+};
 
 // Create a function to retrieve jwt from local storage
 export const getToken = () => {
